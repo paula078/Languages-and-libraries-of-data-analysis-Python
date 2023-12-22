@@ -1,0 +1,32 @@
+{
+  "bibliotekarz": {
+    "haslo": "biblioteka123",
+    "imie": "Jan",
+    "nazwisko": "Kowalski"
+  },
+  "paula": {
+    "haslo": "student",
+    "imie": "Paula",
+    "nazwisko": "Kowalska"
+  },
+  "jan": {
+    "haslo": "uczelnia",
+    "imie": "Jan",
+    "nazwisko": "Konopka"
+  },
+  "karol": {
+    "haslo": "dom",
+    "imie": "Karol",
+    "nazwisko": "Abramowicz"
+  },
+  "ola": {
+    "haslo": "motyl",
+    "imie": "Ola",
+    "nazwisko": "Nowak"
+  },
+  "anna": {
+    "haslo": "haslo",
+    "imie": "Anna",
+    "nazwisko": "Baran"
+  }
+}

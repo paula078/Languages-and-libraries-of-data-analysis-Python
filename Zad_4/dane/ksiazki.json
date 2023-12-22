@@ -1,0 +1,32 @@
+{
+  "Harry Potter": {
+    "autor": "J.K. Rowling",
+    "status": "dostepna"
+  },
+  "Kasacja. Joanna Chylka.": {
+    "autor": "Mroz Remigiusz",
+    "status": "wypozyczona",
+    "czytelnik": "anna",
+    "data_wypozyczenia": "2023-12-22",
+    "data_zwrotu": "2024-01-31",
+    "ilosc_przedluzen": 1,
+    "zarezerwowane": [
+      {
+        "czytelnik": "paula",
+        "data_rezerwacji": "2023-12-22"
+      },
+      {
+        "czytelnik": "ola",
+        "data_rezerwacji": "2023-12-22"
+      }
+    ]
+  },
+  "Potop": {
+    "autor": "Henryk Sienkiewicz",
+    "status": "wypozyczona",
+    "czytelnik": "paula",
+    "data_wypozyczenia": "2023-12-22",
+    "data_zwrotu": "2024-03-11",
+    "ilosc_przedluzen": 3
+  }
+}
