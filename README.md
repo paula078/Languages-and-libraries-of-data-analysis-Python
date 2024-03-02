@@ -1,11 +1,11 @@
   # 📊 Languages and Libraries of Data Analysis 📈
 
-This repository contains materials related to the course "Languages and Libraries of Data Analysis" at AGH University of Science and Technology for the academic year 2023/24. The course aims to familiarize students with programming in Python, with a particular emphasis on its application in data analysis.
+This repository contains tasks created for the course "Languages and Libraries of Data Analysis" at AGH University of Science and Technology 2023/24. The course aims to familiarize students with programming in Python, with a particular emphasis on its application in data analysis.
 
 ## 📝 Tasks
 - ### **Task 1**:
   
-  The goal of this task was to implement a Binary Search Tree (BST) capable of handling the following operations:
+  Implement a Binary Search Tree (BST) capable of handling the following operations:
   - Adding nodes to the tree
   - Checking whether a node exists in the tree
   - Printing the nodes in ascending order using in-order traversal.
@@ -31,7 +31,7 @@ This repository contains materials related to the course "Languages and Librarie
   
 - ### **Task 4**:
   
-  The objective of this task was to design and implement a library management system. The system should be operated through the console, utilizing menus wherever possible.
+  Design and implement a library management system. The system should be operated through the console, utilizing menus wherever possible.
 
   The system should allow users to log in as either a reader or a librarian.
   
@@ -52,7 +52,7 @@ This repository contains materials related to the course "Languages and Librarie
   
 - ### **Task 5**:
  
-  The objective of this task was to implement the k-nearest neighbors (kNN) binary classification algorithm.
+  Implement the k-nearest neighbors (kNN) binary classification algorithm.
 
   The implemented class should provide methods train and predict.
   
