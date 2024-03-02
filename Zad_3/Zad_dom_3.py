@@ -2,9 +2,13 @@ import re
 
 # Zad_1
 def count_words(filename, amount_most_common=None):
-    with open(filename, encoding='utf-8') as infile:
-        content = infile.read().lower()
-        words = re.findall(r'\b\w+\b', content)
+    words = []
+
+    with open(filename, 'r', encoding='utf-8') as infile:
+        for line in infile:
+            line = line.lower()
+            line_words = re.findall(r'\b\w+\b', line)
+            words.extend(line_words)
 
     return counter(words, amount_most_common)
 
