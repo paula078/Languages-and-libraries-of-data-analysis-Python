@@ -20,38 +20,35 @@ class KnnClassifier:
 
     def calculate_distances(self, test_vector, xtrain):
         if self.distance_metric == 'euclidean':
-            return np.linalg.norm(xtrain - test_vector)
+            return np.linalg.norm(xtrain - test_vector, axis=1)
         elif self.distance_metric == 'manhattan':
-            return np.sum(np.abs(xtrain - test_vector))
+            return np.sum(np.abs(xtrain - test_vector), axis=1)
         elif self.distance_metric == 'maximum':
-            return np.max(np.abs(xtrain - test_vector))
+            return np.max(np.abs(xtrain - test_vector), axis=1)
         elif self.distance_metric == 'cosine':
-            dot_products = np.dot(xtrain, test_vector)
+            dot_products = np.dot(xtrain, test_vector.T)
             norms_x = np.linalg.norm(test_vector)
-            norms_X = np.linalg.norm(xtrain)
-            cosine_similarities = dot_products / (norms_x * norms_X)
-            return 1 - cosine_similarities
+            norms_X = np.linalg.norm(xtrain, axis=1)
+            return 1 - dot_products / (norms_x * norms_X)
 
     def predict(self, xtest):
         predictions = [self._predict(x) for x in xtest]
         return predictions
 
     def _predict(self, x):
-        distances = [self.calculate_distances(x, x_train) for x_train in self.X_train]
+        distances = self.calculate_distances(x, self.X_train)
         indices = np.argsort(distances)[:self.n_neighbors]
-        k_nearest_labels = [self.y_train[index] for index in indices]
-        most_common_label = Counter(k_nearest_labels).most_common()
+        k_nearest_labels = self.y_train[indices]
+        most_common_label = Counter(k_nearest_labels).most_common(1)
         return most_common_label[0][0]
 
 #---------------dataset0--------------------------------------
 data = pd.read_csv("dataset0.csv", header=None, delimiter=' ')
 
-X = data.iloc[:, :-1]
-X = np.array(X)
-y = data.iloc[:, -1]
-y = np.array(y)
+X = data.iloc[:, :-1].values
+y = data.iloc[:, -1].values
 
-classifier = KnnClassifier(4, 'maximum')
+classifier = KnnClassifier(3, 'maximum')
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 classifier.train(X_train, y_train)
 
@@ -94,8 +91,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 classifier.train(X_train, y_train)
 
 predictions = classifier.predict(X_test)
-# print("Predictions:", predictions)
+print("Predictions:", predictions)
 
 accuracy = np.sum(predictions == y_test) / len(y_test)
-print("Accuracy: ",accuracy)
+print("Accuracy: ", accuracy)
 """
