@@ -18,8 +18,6 @@ class Graph:
                     self.graph[key].remove(vertex)
         except KeyError:
             print("remove_vertex ERROR: The vertex was not found in the graph")
-        except Exception as e:
-            print(f"An error occurred: {e}")
 
     def add_edge(self, source, destination):  # Graf skierowany
         if source in self.graph and destination in self.graph:
