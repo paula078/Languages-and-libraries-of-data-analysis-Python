@@ -37,8 +37,8 @@ class TestKnnClassifier(TestCase):
 
     def test_calculate_distances(self):
         # Test obliczania odległości dla różnych metryk
-        point1 = np.array([1, 2])
-        point2 = np.array([3, 4])
+        point1 = np.array([[1, 2]])
+        point2 = np.array([[3, 4]])
 
         # Test dla metryki euclidean
         self.classifier.distance_metric = 'euclidean'
